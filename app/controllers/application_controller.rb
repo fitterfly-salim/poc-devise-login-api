@@ -29,8 +29,9 @@ class ApplicationController < ActionController::Base
       return
     end
 
-    user = authenticate_request!
-    render_result_json user
+    if authenticate_request!
+      render_result_json @auth_token
+    end
   end
 
   protected
