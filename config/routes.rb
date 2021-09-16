@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  match 'auth', to: 'application#auth', via: [ :post, :options]
+  match 'validate_user', to: 'application#validate_user', via: [ :post, :options]
+  
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
