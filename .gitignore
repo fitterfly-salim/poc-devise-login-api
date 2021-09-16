@@ -42,3 +42,4 @@ bower.json
 node_modules/
 
 Gemfile.lock
+schema.rb
